@@ -20,7 +20,7 @@ const start = async () => {
   try {
     await app.listen({ port: 333, host: '0.0.0.0' })
 
-    console.log('Servidor Run')
+    console.log('Server Run')
   } catch (error) {
     console.log(error)
   }
