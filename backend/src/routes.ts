@@ -4,6 +4,7 @@ import type {
   FastifyRequest,
   FastifyReply,
 } from 'fastify'
+import { createNutritionController } from './controllers/createNutritionController'
 
 export async function routes(
   fastify: FastifyInstance,
@@ -14,4 +15,11 @@ export async function routes(
 
     reply.send({ ok: true })
   })
+
+  fastify.post(
+    '/create',
+    async (request: FastifyRequest, reply: FastifyReply) => {
+      return new createNutritionController().handle(request, reply)
+    }
+  )
 }
