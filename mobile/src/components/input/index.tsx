@@ -1,12 +1,13 @@
 import { Text, TextInput, View, type KeyboardTypeOptions } from 'react-native'
 
-import { Controller, type Control } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 
 import { colors } from '@/src/constants/colors'
 
 type InputProps = {
   name: string
-  control: Control
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  control: any
   placeholder?: string
   rules?: object
   error?: string
