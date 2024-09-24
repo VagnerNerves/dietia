@@ -1,5 +1,7 @@
 import { Image, Pressable, Text, View } from 'react-native'
 
+import { Link } from 'expo-router'
+
 import { colors } from '../constants/colors'
 
 export default function Home() {
@@ -36,21 +38,25 @@ export default function Home() {
         Sua Dieta personalizada com inteligencia artificial.
       </Text>
 
-      <Pressable
-        style={{
-          backgroundColor: colors.blue,
-          width: '100%',
-          height: 40 /* Tirar isso e colocar padding, isso é horrível nunca fazer. */,
-          borderRadius: 4,
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: 34,
-        }}
-      >
-        <Text style={{ color: colors.white, fontSize: 16, fontWeight: 'bold' }}>
-          Gera Dieta
-        </Text>
-      </Pressable>
+      <Link href="/step" asChild>
+        <Pressable
+          style={{
+            backgroundColor: colors.blue,
+            width: '100%',
+            height: 40 /* Tirar isso e colocar padding, isso é horrível nunca fazer. */,
+            borderRadius: 4,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 34,
+          }}
+        >
+          <Text
+            style={{ color: colors.white, fontSize: 16, fontWeight: 'bold' }}
+          >
+            Gera Dieta
+          </Text>
+        </Pressable>
+      </Link>
     </View>
   )
 }
